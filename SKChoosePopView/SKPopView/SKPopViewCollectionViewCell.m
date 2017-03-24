@@ -7,7 +7,7 @@
 //
 
 #import "SKPopViewCollectionViewCell.h"
-#import "Masonry.h"
+#import "SKMacro.h"
 
 @interface SKPopViewCollectionViewCell ()
 @property (nonatomic, strong) UIImageView * icon;

@@ -27,6 +27,7 @@
 		E472512D1E83E7EA007E61BE /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E47251211E83E7EA007E61BE /* ViewController+MASAdditions.m */; };
 		E472512E1E83E7EA007E61BE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E47251221E83E7EA007E61BE /* README.md */; };
 		E47251311E83EB0E007E61BE /* SKPopViewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E47251301E83EB0E007E61BE /* SKPopViewCollectionViewCell.m */; };
+		E47251341E84DB3D007E61BE /* SKPopAnimationMange.m in Sources */ = {isa = PBXBuildFile; fileRef = E47251331E84DB3D007E61BE /* SKPopAnimationMange.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,9 @@
 		E47251221E83E7EA007E61BE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E472512F1E83EB0E007E61BE /* SKPopViewCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPopViewCollectionViewCell.h; sourceTree = "<group>"; };
 		E47251301E83EB0E007E61BE /* SKPopViewCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPopViewCollectionViewCell.m; sourceTree = "<group>"; };
+		E47251321E84DB3D007E61BE /* SKPopAnimationMange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPopAnimationMange.h; sourceTree = "<group>"; };
+		E47251331E84DB3D007E61BE /* SKPopAnimationMange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPopAnimationMange.m; sourceTree = "<group>"; };
+		E47251351E84FED0007E61BE /* SKMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKMacro.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,9 @@
 				E47251041E83E2EC007E61BE /* SKPopView.m */,
 				E472512F1E83EB0E007E61BE /* SKPopViewCollectionViewCell.h */,
 				E47251301E83EB0E007E61BE /* SKPopViewCollectionViewCell.m */,
+				E47251321E84DB3D007E61BE /* SKPopAnimationMange.h */,
+				E47251331E84DB3D007E61BE /* SKPopAnimationMange.m */,
+				E47251351E84FED0007E61BE /* SKMacro.h */,
 			);
 			path = SKPopView;
 			sourceTree = "<group>";
@@ -265,6 +272,7 @@
 				E472512C1E83E7EA007E61BE /* View+MASAdditions.m in Sources */,
 				E47251051E83E2EC007E61BE /* SKPopView.m in Sources */,
 				E47250ED1E83E254007E61BE /* main.m in Sources */,
+				E47251341E84DB3D007E61BE /* SKPopAnimationMange.m in Sources */,
 				E472512E1E83E7EA007E61BE /* README.md in Sources */,
 				E47251241E83E7EA007E61BE /* MASCompositeConstraint.m in Sources */,
 				E472512B1E83E7EA007E61BE /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
@@ -422,6 +430,7 @@
 				E47251011E83E256007E61BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

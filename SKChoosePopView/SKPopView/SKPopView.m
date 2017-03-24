@@ -5,12 +5,11 @@
 //  Created by shevchenko on 17/3/23.
 //  Copyright © 2017年 shevchenko. All rights reserved.
 //
-#define MyWidth   [UIScreen mainScreen].bounds.size.width
-#define MyHeight    [UIScreen mainScreen].bounds.size.height
 
 #import "SKPopView.h"
-#import "Masonry.h"
+#import "SKMacro.h"
 #import "SKPopViewCollectionViewCell.h"
+#import "SKPopAnimationMange.h"
 
 @interface SKPopView () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView * optionsCollectionView;// 选项collectionView
@@ -22,6 +21,7 @@
 @property (nonatomic, assign) NSInteger selectedRow;// 已选择的选项row
 @property (nonatomic, weak) id <SKPopViewDelegate> delegate;
 @property (nonatomic, copy) SKPopViewChooseCompletion completion;
+@property (nonatomic, strong) SKPopAnimationMange * animationMange;
 
 @end
 
@@ -44,14 +44,7 @@
             }
             _delegate = delegate;
             _completion = completion;
-            
-            NSUserDefaults * userDefault = [NSUserDefaults standardUserDefaults];
-            if ([userDefault integerForKey:@"selectedRow"]) {
-                NSUInteger row = [userDefault integerForKey:@"selectedRow"];
-                _selectedRow = row;
-            } else {
-                _selectedRow = -1;
-            }
+            _selectedRow = -1;
             
             [self customView];
             [[UIApplication sharedApplication].keyWindow addSubview:self];
@@ -72,7 +65,7 @@
     [grayBackground mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self).with.insets(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
-    UITapGestureRecognizer * dismissGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cancelShare)];
+    UITapGestureRecognizer * dismissGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cancel)];
     [grayBackground addGestureRecognizer:dismissGesture];
     
     // 弹窗部分
@@ -82,11 +75,11 @@
     self.popView.layer.masksToBounds = YES;
     self.popView.layer.cornerRadius = 20;
     [self.popView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self).with.offset(180);
+        make.centerY.equalTo(self);
         make.left.equalTo(self).with.offset(60);
         make.right.equalTo(self).with.offset(-60);
         
-        make.size.mas_equalTo(CGSizeMake(180, 180));
+        make.height.mas_offset(180);
     }];
     
     //创建一个layout布局类
@@ -110,33 +103,105 @@
 }
 
 #pragma mark - 手势响应
-- (void)cancelShare
+- (void)cancel
 {
     [self dismissAnimation];
+}
+
+#pragma mark - 外部调用
+- (void)show
+{
+    if (self.enableAnimation == YES) {
+        [self displayAnimation];
+    }
+}
+
+- (void)dismiss
+{
+    if (self.enableAnimation == YES) {
+        [self dismissAnimation];
+    } else {
+        [self removeFromSuperview];
+    }
+}
+
+#pragma mark - 外部配置
+- (void)setEnableRecord:(BOOL)enableRecord
+{
+    _enableRecord = enableRecord;
+    if (_enableRecord == YES) {
+        NSUserDefaults * userDefault = [NSUserDefaults standardUserDefaults];
+        if ([userDefault integerForKey:@"selectedRow"]) {
+            NSUInteger row = [userDefault integerForKey:@"selectedRow"];
+            _selectedRow = row;
+        } else {
+            _selectedRow = -1;
+        }
+    } else {
+        _selectedRow = -1;
+    }
+
 }
 
 #pragma mark - 动画设置
 - (void)displayAnimation
 {
-    [UIView animateWithDuration:0.5 animations:^{
-        [self.popView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self);
-        }];
-        self.popView.center = CGPointMake(self.center.x, self.center.y);
-    }];
+    self.animationMange = [[SKPopAnimationMange alloc] init];
+    switch (self.animationType) {
+        case SK_TYPE_SPRING:
+            self.animationMange.type = SK_ANIMATION_TYPE_SPRING;
+            break;
+        case SK_TYPE_ROTATION:
+            self.animationMange.type = SK_ANIMATION_TYPE_ROTATION;
+            break;
+        case SK_TYPE_FADE:
+            self.animationMange.type = SK_ANIMATION_TYPE_FADE;
+            break;
+        case SK_TYPE_LARGEN:
+            self.animationMange.type = SK_ANIMATION_TYPE_LARGEN;
+            break;
+        case SK_TYPE_ROTATION_LARGEN:
+            self.animationMange.type = SK_ANIMATION_TYPE_ROTATION_LARGEN;
+            break;
+        case SK_TYPE_TRANSFORMATION:
+            self.animationMange.type = SK_ANIMATION_TYPE_TRANSFORMATION;
+            break;
+    }
+    
+    switch (self.animationDirection) {
+        case SK_SUBTYPE_FROMRIGHT:
+            self.animationMange.animationDirection = SK_ANIMATION_SUBTYPE_FROMRIGHT;
+            break;
+        case SK_SUBTYPE_FROMLEFT:
+            self.animationMange.animationDirection = SK_ANIMATION_SUBTYPE_FROMLEFT;
+            break;
+        case SK_SUBTYPE_FROMTOP:
+            self.animationMange.animationDirection = SK_ANIMATION_SUBTYPE_FROMTOP;
+            break;
+
+        case SK_SUBTYPE_FROMBOTTOM:
+            self.animationMange.animationDirection = SK_ANIMATION_SUBTYPE_FROMBOTTOM;
+            break;
+
+        case SK_SUBTYPE_FROMCENTER:
+            self.animationMange.animationDirection = SK_ANIMATION_SUBTYPE_FROMCENTER;
+            break;
+
+            
+        default:
+            break;
+    }
+    
+    [self.animationMange animateWithView:self.popView Duration:self.animationDuration animationType:self.animationMange.type animationDirection:self.animationMange.animationDirection];
 }
 
 - (void)dismissAnimation
 {
-    [UIView animateWithDuration:0.5 animations:^{
-        [self.popView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self).with.offset(180);
-        }];
-        self.popView.center = CGPointMake(self.center.x, MyHeight + 10);
-        
-    } completion:^(BOOL finished) {
+    if (self.enableAnimation == YES) {
+        [self.animationMange dismissAnimationForRootView:self];
+    } else {
         [self removeFromSuperview];
-    }];
+    }
 }
 
 #pragma mark - collectionView
@@ -184,7 +249,8 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(self.popView.frame.size.width / 4, 80);
+    NSInteger ratio = (self.ratio / 2) + 1;
+    return CGSizeMake(self.popView.frame.size.width / ratio, 80);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
