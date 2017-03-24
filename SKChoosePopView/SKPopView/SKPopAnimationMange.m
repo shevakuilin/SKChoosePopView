@@ -59,10 +59,6 @@
         case SK_ANIMATION_TYPE_TRANSFORMATION:// 变形效果
             [self transformationAnimation];
             break;
-            
-//        case SK_ANIMATION_TYPE_CUSTOM:// 自定义效果
-//            [self customAnimation];
-//            break;
     }
 }
 
@@ -249,17 +245,6 @@
     return boundsAnimation;
 }
 
-#pragma mark - 自定义动画效果
-//- (void)customAnimation
-//{
-//    [self animationDirectionInitialize];
-//    CAAnimationGroup * animationGroup = [CAAnimationGroup animation];
-//    animationGroup.animations = @[[self partOfTheAnimationGroupPosition:_animationView.center], [self transformationAnimationGroup]];
-//    animationGroup.duration = _animationDuration;
-//    [_animationView.layer addAnimation:animationGroup forKey:@"groupAnimation"];
-//
-//}
-
 
 #pragma mark ------------------------ 退场动画 ---------------------------------
 - (void)dismissAnimationForRootView:(UIView *)view
@@ -270,6 +255,17 @@
     } completion:^(BOOL finished) {
         [view removeFromSuperview];
     }];
+}
+
+#pragma mark ------------------------ 选项点击动画 ------------------------------
+- (void)clickEffectAnimationForView:(UIView *)view
+{
+    CABasicAnimation * scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    scaleAnimation.fromValue = [NSNumber numberWithFloat:1];
+    scaleAnimation.toValue = [NSNumber numberWithFloat:0.8];
+    scaleAnimation.duration = 0.1;
+    scaleAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    [view.layer addAnimation:scaleAnimation forKey:nil];
 }
 
 @end

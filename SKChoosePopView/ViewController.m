@@ -46,6 +46,7 @@
     popView.animationDuration = 0.5;
     popView.enableRecord = YES;// 开启选择记录
     popView.enableAnimation = YES;// 开启动画
+    popView.enableClickEffect = YES;// 开启点击效果
     popView.ratio = 6;// 选项数量
     // TODO: 显示
     [popView show];

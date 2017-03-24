@@ -8,8 +8,10 @@
 
 #import "SKPopViewCollectionViewCell.h"
 #import "SKMacro.h"
+#import "SKPopAnimationMange.h"
 
 @interface SKPopViewCollectionViewCell ()
+@property (nonatomic, strong) UIView * basementView;
 @property (nonatomic, strong) UIImageView * icon;
 @property (nonatomic, strong) UILabel * title;
 
@@ -31,24 +33,31 @@
 #pragma mark - 创建界面
 - (void)customView
 {
+    self.basementView = [UIView new];
+    [self addSubview:self.basementView];
+    self.basementView.backgroundColor = [UIColor clearColor];
+    [self.basementView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self).with.insets(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
+    
     self.icon = [UIImageView new];
-    [self addSubview:self.icon];
+    [self.basementView addSubview:self.icon];
     [self.icon mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self).with.offset(10);
-        make.centerX.equalTo(self);
+        make.top.equalTo(self.basementView).with.offset(10);
+        make.centerX.equalTo(self.basementView);
         
         make.size.mas_equalTo(CGSizeMake(35, 35));
     }];
     
     self.title = [UILabel new];
-    [self addSubview:self.title];
+    [self.basementView addSubview:self.title];
     self.title.font = [UIFont systemFontOfSize:12];
     self.title.textAlignment = NSTextAlignmentCenter;
     [self.title mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.icon.mas_bottom).with.offset(5);
         make.centerX.equalTo(self.icon);
-        make.left.equalTo(self);
-        make.right.equalTo(self);
+        make.left.equalTo(self.basementView);
+        make.right.equalTo(self.basementView);
     }];
 }
 
@@ -83,6 +92,14 @@
     }
 }
 
-
+#pragma mark - 外部配置
+- (void)setEnableClickEffect:(BOOL)enableClickEffect
+{
+    _enableClickEffect = enableClickEffect;
+    if (enableClickEffect == YES) {
+        SKPopAnimationMange * animationMange = [[SKPopAnimationMange alloc] init];
+        [animationMange clickEffectAnimationForView:self.basementView];
+    }
+}
 
 @end

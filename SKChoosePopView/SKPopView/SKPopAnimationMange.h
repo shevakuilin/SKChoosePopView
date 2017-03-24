@@ -40,6 +40,11 @@ typedef NS_ENUM(NSInteger, SK_ANIMATION_SUBTYPE) {// 动画方向
  */
 - (void)dismissAnimationForRootView:(UIView *)view;
 
+/** 点击动画
+ * @param view 需要执行动画的view
+ */
+- (void)clickEffectAnimationForView:(UIView *)view;
+
 @property (nonatomic, assign) SK_ANIMATION_TYPE type;// 动画类型
 @property (nonatomic, assign) SK_ANIMATION_SUBTYPE animationDirection;// 动画方向
 

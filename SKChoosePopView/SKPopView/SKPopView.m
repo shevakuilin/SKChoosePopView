@@ -219,12 +219,15 @@
 {
     SKPopViewCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PopView" forIndexPath:indexPath];
     cell.optionsTitle = _optionsTitle[indexPath.row];
+    
     if (_selectedRow >= 0 && _selectedRow == indexPath.row) {
         cell.optionsIconNormal = _optionsIconSelected[indexPath.row];
         cell.textColor = _titleColor;
+        cell.enableClickEffect = self.enableClickEffect;
     } else {
         cell.optionsIconNormal = _optionsIconNormal[indexPath.row];
         cell.textColor = nil;
+        cell.enableClickEffect = NO;
     }
     
     return cell;
