@@ -22,40 +22,64 @@ SKChoosePopView是一个HUD风格的可定制化选项弹窗的快速解决方�
 #### 头文件导入
 <pre><code>#import "SKPopView.h"</code></pre>
 
+
+
 #### 初始化
 <pre><code>SKPopView * popView = [[SKPopView alloc] initWithOptionsTitle: OptionsIconNormal:kDate.normalIcons  OptionsIconSelected: selectedTitleColor:[UIColor orangeColor] delegate:self completion:^{
 // TODO: 如果这里不需要就nil
 }];</code><pre>
 
+
+
 ### 显示
 <pre><code>[popView show];</code></pre>
+
+
 
 ### 消失
 <pre><code>[popView dismiss];</code></pre>
 
+
+
 ### 设置动画类型
 <pre><code>popView.animationType = SK_TYPE_SPRING;</code></pre>
+
+
 
 ### 设置动画方向
 <pre><code>popView.animationDirection = SK_SUBTYPE_FROMBOTTOM;</code></pre>
 
+
+
 ### 动画时间
 <pre><code>popView.animationDuration = 0.5;</code></pre>
+
+
 
 ### 开启/关闭选择记录
 <pre><code>popView.enableRecord = YES;</code></pre>
 
+
+
 ### 开启/关闭动画效果
 <pre><code>popView.enableAnimation = YES;</code></pre>
+
+
 
 ### 行数设置
 <pre><code>popView.optionsLine = 2;</code></pre>
 
+
+
 ### 列数设置
 <pre><code>popView.optionsRow = 3;</code></pre>
 
+
+
 ### 最小行间距
 <pre><code>popView.minLineSpacing = 10;</code></pre>
+
+
 
 ### 最小列间距
 <pre><code>popView.minRowSpacing = 10;</code></pre>
