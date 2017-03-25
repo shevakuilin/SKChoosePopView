@@ -87,7 +87,7 @@
 #pragma mark - 动画通用位移
 - (CAKeyframeAnimation *)partOfTheAnimationGroupPosition:(CGPoint)startPosition
 {
-    CAKeyframeAnimation * animation = [CAKeyframeAnimation animationWithKeyPath:@"position"];// 创建关键帧动画
+    CAKeyframeAnimation * animation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
     NSValue * startValue, * endValue;
     startValue = [NSValue valueWithCGPoint:startPosition];
     endValue = [NSValue valueWithCGPoint:WindowCenter];

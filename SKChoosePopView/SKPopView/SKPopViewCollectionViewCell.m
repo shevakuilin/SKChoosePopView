@@ -43,10 +43,9 @@
     self.icon = [UIImageView new];
     [self.basementView addSubview:self.icon];
     [self.icon mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.basementView).with.offset(10);
         make.centerX.equalTo(self.basementView);
+        make.centerY.equalTo(self).with.offset(-10);
         
-        make.size.mas_equalTo(CGSizeMake(35, 35));
     }];
     
     self.title = [UILabel new];

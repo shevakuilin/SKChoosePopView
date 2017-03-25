@@ -23,6 +23,9 @@
 @property (nonatomic, copy) SKPopViewChooseCompletion completion;
 @property (nonatomic, strong) SKPopAnimationMange * animationMange;
 
+@property (nonatomic, assign) NSUInteger itemHeight;// 选项高度
+@property (nonatomic, assign) NSUInteger itemWidth;// 选项宽度
+
 @end
 
 @implementation SKPopView
@@ -45,6 +48,9 @@
             _delegate = delegate;
             _completion = completion;
             _selectedRow = -1;
+            
+            self.itemHeight = 0;
+            self.itemWidth = 0;
             
             [self customView];
             [[UIApplication sharedApplication].keyWindow addSubview:self];
@@ -82,11 +88,9 @@
         make.height.mas_offset(180);
     }];
     
-    //创建一个layout布局类
+    // 弹窗内选项
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc]init];
-    //设置布局方向为垂直流布局
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    //创建collectionView 通过一个布局策略layout来创建
     self.optionsCollectionView = [[UICollectionView alloc] initWithFrame:self.frame collectionViewLayout:layout];
     [self.popView addSubview:self.optionsCollectionView];
     self.optionsCollectionView.delegate = self;
@@ -97,7 +101,13 @@
     self.optionsCollectionView.showsHorizontalScrollIndicator = NO;
     [self.optionsCollectionView registerClass:[SKPopViewCollectionViewCell class] forCellWithReuseIdentifier:@"PopView"];
     [self.optionsCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.popView).with.insets(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.centerY.equalTo(self);
+        make.left.equalTo(self).with.offset(60);
+        make.right.equalTo(self).with.offset(-60);
+        
+        // 设置约束优先级, 限制最大高度
+        make.height.mas_lessThanOrEqualTo(180).priorityHigh();
+        make.height.mas_offset(180);
     }];
 
 }
@@ -141,6 +151,40 @@
         _selectedRow = -1;
     }
 
+}
+
+- (void)setOptionsLine:(NSUInteger)optionsLine
+{
+    _optionsLine = optionsLine;
+    NSUInteger lines = self.optionsTitle.count / optionsLine;
+    self.itemHeight = 180 / lines;
+    if (self.itemHeight < 60) {// 限制最小高度
+        self.itemHeight = 60;
+        
+    } else if (self.itemHeight * optionsLine > 180 ) {// 限制最大高度
+        self.itemHeight = 180 / optionsLine;
+    }
+    [self.optionsCollectionView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_offset(self.itemHeight * optionsLine);
+    }];
+    [self.optionsCollectionView reloadData];
+}
+
+- (void)setOptionsRow:(NSUInteger)optionsRow
+{
+    _optionsRow = optionsRow;
+    self.itemWidth = (MyWidth - 140) / (optionsRow);
+    [self.optionsCollectionView reloadData];
+}
+
+- (void)setMinLineSpacing:(NSUInteger)minLineSpacing
+{
+    _minLineSpacing = minLineSpacing;
+}
+
+- (void)setMinRowSpacing:(NSUInteger)minRowSpacing
+{
+    _minRowSpacing = minRowSpacing;
 }
 
 #pragma mark - 动画设置
@@ -252,14 +296,24 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSInteger ratio = (self.ratio / 2) + 1;
-    return CGSizeMake(self.popView.frame.size.width / ratio, 80);
+    return CGSizeMake(self.itemWidth, self.itemHeight);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
     return UIEdgeInsetsMake(0, 10, 0, 10);
 }
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    return self.minRowSpacing;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return self.minLineSpacing;
+}
+
 
 #pragma mark - 安全处理
 /**

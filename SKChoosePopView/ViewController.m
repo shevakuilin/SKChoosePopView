@@ -38,7 +38,7 @@
 - (void)showPopView
 {
     // TODO: 初始化
-    SKPopView * popView = [[SKPopView alloc] initWithOptionsTitle:@[@"发生时", @"提前1小时", @"提前1天", @"提前一周", @"提前一小时", @"自定义"] OptionsIconNormal:@[@"mn_icon_setting_25x25_", @"mn_icon_setting_25x25_", @"mn_icon_setting_25x25_", @"mn_icon_setting_25x25_", @"mn_icon_setting_25x25_", @"mn_icon_setting_25x25_"]  OptionsIconSelected:@[@"new_album_dele_12x12_", @"new_album_dele_12x12_", @"new_album_dele_12x12_", @"new_album_dele_12x12_", @"new_album_dele_12x12_", @"new_album_dele_12x12_"] selectedTitleColor:[UIColor orangeColor] delegate:self completion:^{
+    SKPopView * popView = [[SKPopView alloc] initWithOptionsTitle:@[@"发生时", @"提前1小时", @"提前1天", @"提前1小时", @"提前1天", @"提前1小时"] OptionsIconNormal:@[@"mn_icon_setting_25x25_", @"mn_icon_setting_25x25_", @"mn_icon_setting_25x25_", @"mn_icon_setting_25x25_", @"mn_icon_setting_25x25_", @"mn_icon_setting_25x25_"]  OptionsIconSelected:@[@"new_album_dele_12x12_", @"new_album_dele_12x12_", @"new_album_dele_12x12_", @"new_album_dele_12x12_", @"new_album_dele_12x12_", @"new_album_dele_12x12_"] selectedTitleColor:[UIColor orangeColor] delegate:self completion:^{
             // TODO: 如果这里不需要就nil
     }];
     popView.animationType = SK_TYPE_TRANSFORMATION;
@@ -47,7 +47,9 @@
     popView.enableRecord = YES;// 开启选择记录
     popView.enableAnimation = YES;// 开启动画
     popView.enableClickEffect = YES;// 开启点击效果
-    popView.ratio = 6;// 选项数量
+    popView.optionsLine = 2;// 行数设置
+    popView.optionsRow = 3;// 列数设置
+    popView.minLineSpacing = 10;// 最小行间距
     // TODO: 显示
     [popView show];
 }

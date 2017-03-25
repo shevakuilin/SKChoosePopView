@@ -61,7 +61,10 @@ typedef void (^SKPopViewChooseCompletion)(void);
 @property (nonatomic, assign) BOOL enableRecord;// 开启选择记录, 会自动记录上一次的选择情况，默认为NO
 @property (nonatomic, assign) BOOL enableAnimation;// 开启动画，默认为NO
 @property (nonatomic, assign) BOOL enableClickEffect;// 开启点击效果, 默认为NO
-@property (nonatomic, assign) NSInteger ratio;// 选项比例，按选项的数量传入即可 1:1
+@property (nonatomic, assign) NSUInteger optionsLine;// 显示的行数--->纵向
+@property (nonatomic, assign) NSUInteger optionsRow;// 显示的列数---->横向
+@property (nonatomic, assign) NSUInteger minLineSpacing;// 最小行间距, 默认为0
+@property (nonatomic, assign) NSUInteger minRowSpacing;// 最小列间距, 默认为0
 @property (nonatomic, assign) SK_TYPE animationType;// 动画类型
 @property (nonatomic, assign) SK_SUBTYPE animationDirection;// 动画出现的方向
 @property (nonatomic, assign) NSTimeInterval animationDuration;// 动画持续时间
