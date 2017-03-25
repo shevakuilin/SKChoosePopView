@@ -266,7 +266,11 @@
     
     if (_selectedRow >= 0 && _selectedRow == indexPath.row) {
         cell.optionsIconNormal = _optionsIconSelected[indexPath.row];
-        cell.textColor = _titleColor;
+        if (self.enableRecord == YES) {
+            cell.textColor = _titleColor;
+        } else {
+            cell.textColor = nil;
+        }
         cell.enableClickEffect = self.enableClickEffect;
     } else {
         cell.optionsIconNormal = _optionsIconNormal[indexPath.row];

@@ -28,6 +28,7 @@
 		E472512E1E83E7EA007E61BE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E47251221E83E7EA007E61BE /* README.md */; };
 		E47251311E83EB0E007E61BE /* SKPopViewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E47251301E83EB0E007E61BE /* SKPopViewCollectionViewCell.m */; };
 		E47251341E84DB3D007E61BE /* SKPopAnimationMange.m in Sources */ = {isa = PBXBuildFile; fileRef = E47251331E84DB3D007E61BE /* SKPopAnimationMange.m */; };
+		E47251381E863E59007E61BE /* SKDateSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E47251371E863E58007E61BE /* SKDateSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,8 @@
 		E47251321E84DB3D007E61BE /* SKPopAnimationMange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPopAnimationMange.h; sourceTree = "<group>"; };
 		E47251331E84DB3D007E61BE /* SKPopAnimationMange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPopAnimationMange.m; sourceTree = "<group>"; };
 		E47251351E84FED0007E61BE /* SKMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKMacro.h; sourceTree = "<group>"; };
+		E47251361E863E58007E61BE /* SKDateSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKDateSource.h; sourceTree = "<group>"; };
+		E47251371E863E58007E61BE /* SKDateSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKDateSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,13 +110,14 @@
 		E47250EA1E83E254007E61BE /* SKChoosePopView */ = {
 			isa = PBXGroup;
 			children = (
+				E47251391E863E8A007E61BE /* DateSource */,
 				E47251061E83E7EA007E61BE /* Masonry */,
 				E47251021E83E2A4007E61BE /* SKPopView */,
-				E47250EE1E83E254007E61BE /* AppDelegate.h */,
-				E47250EF1E83E255007E61BE /* AppDelegate.m */,
 				E47250F11E83E255007E61BE /* ViewController.h */,
 				E47250F21E83E255007E61BE /* ViewController.m */,
 				E47250F41E83E256007E61BE /* Main.storyboard */,
+				E47250EE1E83E254007E61BE /* AppDelegate.h */,
+				E47250EF1E83E255007E61BE /* AppDelegate.m */,
 				E47250F71E83E256007E61BE /* Assets.xcassets */,
 				E47250F91E83E256007E61BE /* LaunchScreen.storyboard */,
 				E47250FC1E83E256007E61BE /* Info.plist */,
@@ -184,6 +188,15 @@
 				E47251211E83E7EA007E61BE /* ViewController+MASAdditions.m */,
 			);
 			path = Masonry;
+			sourceTree = "<group>";
+		};
+		E47251391E863E8A007E61BE /* DateSource */ = {
+			isa = PBXGroup;
+			children = (
+				E47251361E863E58007E61BE /* SKDateSource.h */,
+				E47251371E863E58007E61BE /* SKDateSource.m */,
+			);
+			name = DateSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +274,7 @@
 			files = (
 				E47251261E83E7EA007E61BE /* MASConstraintMaker.m in Sources */,
 				E47250F31E83E255007E61BE /* ViewController.m in Sources */,
+				E47251381E863E59007E61BE /* SKDateSource.m in Sources */,
 				E47250F01E83E255007E61BE /* AppDelegate.m in Sources */,
 				E47251251E83E7EA007E61BE /* MASConstraint.m in Sources */,
 				E472512D1E83E7EA007E61BE /* ViewController+MASAdditions.m in Sources */,
