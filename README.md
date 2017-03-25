@@ -1,9 +1,62 @@
-# SKChoosePopView
+# 简述
 
-## 一个可定制化的选项弹窗
+SKChoosePopView是一个HUD风格的可定制化选项弹窗的快速解决方案，集成了上、下、左、右、中5个进场方向的6种动画效果，如果不能满足你对酷炫效果的需要，SKChoosePopView同样支持自定义动画，以及选择记录、动画的开闭、点击特效、行列数量控制等。如果你觉得还不错，star支持一下吧！
 
 ![Language](https://img.shields.io/badge/Language-%20Objective%20C%20-blue.svg) 
 
+
 ### 效果图 
 <img src="http://ofg0p74ar.bkt.clouddn.com/SKPopViewExample.gif" width="370" height ="665" />
+
+
+### 如何开始 
+
+1.从GitHub上Clone-->SKChoosePopView, 然后查看Demo
+2.请仔细阅读下方特别指出的部分和需要注意问题
+3.在项目中使用SKChoosePopView，直接将SKPopView文件夹拷贝到工程中
+4.SKChoosePopView基于Masonry布局，请确保你的工程里已存在Masonry，[Masonry下载地址](https://github.com/SnapKit/Masonry)
+
+
+### 使用方法
+
+#### 头文件导入
+<pre><code>#import "SKPopView.h"</code></pre>
+
+#### 初始化
+<pre><code>SKPopView * popView = [[SKPopView alloc] initWithOptionsTitle: OptionsIconNormal:kDate.normalIcons  OptionsIconSelected: selectedTitleColor:[UIColor orangeColor] delegate:self completion:^{
+// TODO: 如果这里不需要就nil
+}];</code><pre>
+
+### 显示
+<pre><code>[popView show];</code></pre>
+
+### 消失
+<pre><code>[popView dismiss];</code></pre>
+
+### 设置动画类型
+<pre><code>popView.animationType = SK_TYPE_SPRING;</code></pre>
+
+### 设置动画方向
+<pre><code>popView.animationDirection = SK_SUBTYPE_FROMBOTTOM;</code></pre>
+
+### 动画时间
+<pre><code>popView.animationDuration = 0.5;</code></pre>
+
+### 开启/关闭选择记录
+<pre><code>popView.enableRecord = YES;</code></pre>
+
+### 开启/关闭动画效果
+<pre><code>popView.enableAnimation = YES;</code></pre>
+
+### 行数设置
+<pre><code>popView.optionsLine = 2;</code></pre>
+
+### 列数设置
+<pre><code>popView.optionsRow = 3;</code></pre>
+
+### 最小行间距
+<pre><code>popView.minLineSpacing = 10;</code></pre>
+
+### 最小列间距
+<pre><code>popView.minRowSpacing = 10;</code></pre>
 
