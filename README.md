@@ -33,7 +33,7 @@ SKChoosePopView是一个HUD风格的可定制化选项弹窗的快速解决方�
 #### 初始化
 <pre><code>SKPopView * popView = [[SKPopView alloc] initWithOptionsTitle: OptionsIconNormal:kDate.normalIcons  OptionsIconSelected: selectedTitleColor:[UIColor orangeColor] delegate:self completion:^{
 // TODO: 如果这里不需要就nil
-}];</code><pre>
+}];</code></pre>
 
 
 
