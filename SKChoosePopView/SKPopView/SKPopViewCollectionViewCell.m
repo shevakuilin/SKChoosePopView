@@ -8,7 +8,7 @@
 
 #import "SKPopViewCollectionViewCell.h"
 #import "SKMacro.h"
-#import "SKPopAnimationMange.h"
+#import "SKPopAnimationManger.h"
 
 @interface SKPopViewCollectionViewCell ()
 @property (nonatomic, strong) UIView * basementView;
@@ -96,8 +96,8 @@
 {
     _enableClickEffect = enableClickEffect;
     if (enableClickEffect == YES) {
-        SKPopAnimationMange * animationMange = [[SKPopAnimationMange alloc] init];
-        [animationMange clickEffectAnimationForView:self.basementView];
+        SKPopAnimationManger * animationManger = [[SKPopAnimationManger alloc] init];
+        [animationManger clickEffectAnimationForView:self.basementView];
     }
 }
 

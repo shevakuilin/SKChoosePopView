@@ -9,7 +9,7 @@
 #import "SKPopView.h"
 #import "SKMacro.h"
 #import "SKPopViewCollectionViewCell.h"
-#import "SKPopAnimationMange.h"
+#import "SKPopAnimationManger.h"
 
 @interface SKPopView () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView * optionsCollectionView;// 选项collectionView
@@ -21,7 +21,7 @@
 @property (nonatomic, assign) NSInteger selectedRow;// 已选择的选项row
 @property (nonatomic, weak) id <SKPopViewDelegate> delegate;
 @property (nonatomic, copy) SKPopViewChooseCompletion completion;
-@property (nonatomic, strong) SKPopAnimationMange * animationMange;
+@property (nonatomic, strong) SKPopAnimationManger * animationManger;
 
 @property (nonatomic, assign) NSUInteger itemHeight;// 选项高度
 @property (nonatomic, assign) NSUInteger itemWidth;// 选项宽度
@@ -190,45 +190,45 @@
 #pragma mark - 动画设置
 - (void)displayAnimation
 {
-    self.animationMange = [[SKPopAnimationMange alloc] init];
+    self.animationManger = [[SKPopAnimationManger alloc] init];
     switch (self.animationType) {
         case SK_TYPE_SPRING:
-            self.animationMange.type = SK_ANIMATION_TYPE_SPRING;
+            self.animationManger.type = SK_ANIMATION_TYPE_SPRING;
             break;
         case SK_TYPE_ROTATION:
-            self.animationMange.type = SK_ANIMATION_TYPE_ROTATION;
+            self.animationManger.type = SK_ANIMATION_TYPE_ROTATION;
             break;
         case SK_TYPE_FADE:
-            self.animationMange.type = SK_ANIMATION_TYPE_FADE;
+            self.animationManger.type = SK_ANIMATION_TYPE_FADE;
             break;
         case SK_TYPE_LARGEN:
-            self.animationMange.type = SK_ANIMATION_TYPE_LARGEN;
+            self.animationManger.type = SK_ANIMATION_TYPE_LARGEN;
             break;
         case SK_TYPE_ROTATION_LARGEN:
-            self.animationMange.type = SK_ANIMATION_TYPE_ROTATION_LARGEN;
+            self.animationManger.type = SK_ANIMATION_TYPE_ROTATION_LARGEN;
             break;
         case SK_TYPE_TRANSFORMATION:
-            self.animationMange.type = SK_ANIMATION_TYPE_TRANSFORMATION;
+            self.animationManger.type = SK_ANIMATION_TYPE_TRANSFORMATION;
             break;
     }
     
     switch (self.animationDirection) {
         case SK_SUBTYPE_FROMRIGHT:
-            self.animationMange.animationDirection = SK_ANIMATION_SUBTYPE_FROMRIGHT;
+            self.animationManger.animationDirection = SK_ANIMATION_SUBTYPE_FROMRIGHT;
             break;
         case SK_SUBTYPE_FROMLEFT:
-            self.animationMange.animationDirection = SK_ANIMATION_SUBTYPE_FROMLEFT;
+            self.animationManger.animationDirection = SK_ANIMATION_SUBTYPE_FROMLEFT;
             break;
         case SK_SUBTYPE_FROMTOP:
-            self.animationMange.animationDirection = SK_ANIMATION_SUBTYPE_FROMTOP;
+            self.animationManger.animationDirection = SK_ANIMATION_SUBTYPE_FROMTOP;
             break;
 
         case SK_SUBTYPE_FROMBOTTOM:
-            self.animationMange.animationDirection = SK_ANIMATION_SUBTYPE_FROMBOTTOM;
+            self.animationManger.animationDirection = SK_ANIMATION_SUBTYPE_FROMBOTTOM;
             break;
 
         case SK_SUBTYPE_FROMCENTER:
-            self.animationMange.animationDirection = SK_ANIMATION_SUBTYPE_FROMCENTER;
+            self.animationManger.animationDirection = SK_ANIMATION_SUBTYPE_FROMCENTER;
             break;
 
             
@@ -236,13 +236,13 @@
             break;
     }
     
-    [self.animationMange animateWithView:self.popView Duration:self.animationDuration animationType:self.animationMange.type animationDirection:self.animationMange.animationDirection];
+    [self.animationManger animateWithView:self.popView Duration:self.animationDuration animationType:self.animationManger.type animationDirection:self.animationManger.animationDirection];
 }
 
 - (void)dismissAnimation
 {
     if (self.enableAnimation == YES) {
-        [self.animationMange dismissAnimationForRootView:self];
+        [self.animationManger dismissAnimationForRootView:self];
     } else {
         [self removeFromSuperview];
     }
