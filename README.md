@@ -11,13 +11,13 @@ SKChoosePopView是一个HUD风格的可定制化选项弹窗的快速解决方�
 
 # 如何开始 
 
-1.从GitHub上Clone-->SKChoosePopView, 然后查看Demo(由于使用cocoaPods管理，请打开xcworkspace工程进行查看)
+1.从GitHub上Clone-->SKChoosePopView, 然后查看Demo (由于使用cocoaPods管理，请打开xcworkspace工程进行查看)
 
 
 2.请仔细阅读下方特别指出的部分和需要注意问题
 
 
-3.在项目中使用SKChoosePopView，直接将目录下的SKChoosePopView文件夹拷贝到工程中，或在podfile文件中添加pod 'SKChoosePopView'
+3.在项目中使用SKChoosePopView，直接将目录下的SKChoosePopView文件夹拷贝到工程中，或在podfile文件中添加```pod 'SKChoosePopView'```
 
 
 4.SKChoosePopView基于Masonry布局，请确保你的工程里已存在Masonry，[下载地址](https://github.com/SnapKit/Masonry)
