@@ -15,7 +15,7 @@
 
 @end
 
-@implementation SKPopAnimationMange
+@implementation SKPopAnimationManger
 
 - (instancetype)init
 {
