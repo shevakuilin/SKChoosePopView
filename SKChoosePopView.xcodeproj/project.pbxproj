@@ -13,7 +13,6 @@
 		E47250F61E83E256007E61BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E47250F41E83E256007E61BE /* Main.storyboard */; };
 		E47250F81E83E256007E61BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E47250F71E83E256007E61BE /* Assets.xcassets */; };
 		E47250FB1E83E256007E61BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E47250F91E83E256007E61BE /* LaunchScreen.storyboard */; };
-		E47251051E83E2EC007E61BE /* SKPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = E47251041E83E2EC007E61BE /* SKPopView.m */; };
 		E47251231E83E7EA007E61BE /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E47251071E83E7EA007E61BE /* LICENSE */; };
 		E47251241E83E7EA007E61BE /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = E472510A1E83E7EA007E61BE /* MASCompositeConstraint.m */; };
 		E47251251E83E7EA007E61BE /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = E472510D1E83E7EA007E61BE /* MASConstraint.m */; };
@@ -26,9 +25,10 @@
 		E472512C1E83E7EA007E61BE /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E472511E1E83E7EA007E61BE /* View+MASAdditions.m */; };
 		E472512D1E83E7EA007E61BE /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E47251211E83E7EA007E61BE /* ViewController+MASAdditions.m */; };
 		E472512E1E83E7EA007E61BE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E47251221E83E7EA007E61BE /* README.md */; };
-		E47251311E83EB0E007E61BE /* SKPopViewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E47251301E83EB0E007E61BE /* SKPopViewCollectionViewCell.m */; };
-		E47251341E84DB3D007E61BE /* SKPopAnimationManger.m in Sources */ = {isa = PBXBuildFile; fileRef = E47251331E84DB3D007E61BE /* SKPopAnimationManger.m */; };
 		E47251381E863E59007E61BE /* SKDateSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E47251371E863E58007E61BE /* SKDateSource.m */; };
+		E47251421E88AA97007E61BE /* SKPopAnimationManger.m in Sources */ = {isa = PBXBuildFile; fileRef = E472513D1E88AA97007E61BE /* SKPopAnimationManger.m */; };
+		E47251431E88AA97007E61BE /* SKPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = E472513F1E88AA97007E61BE /* SKPopView.m */; };
+		E47251441E88AA97007E61BE /* SKPopViewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E47251411E88AA97007E61BE /* SKPopViewCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,8 +42,6 @@
 		E47250F71E83E256007E61BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E47250FA1E83E256007E61BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E47250FC1E83E256007E61BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E47251031E83E2EC007E61BE /* SKPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPopView.h; sourceTree = "<group>"; };
-		E47251041E83E2EC007E61BE /* SKPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPopView.m; sourceTree = "<group>"; };
 		E47251071E83E7EA007E61BE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E47251091E83E7EA007E61BE /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		E472510A1E83E7EA007E61BE /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
@@ -71,13 +69,15 @@
 		E47251201E83E7EA007E61BE /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		E47251211E83E7EA007E61BE /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		E47251221E83E7EA007E61BE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		E472512F1E83EB0E007E61BE /* SKPopViewCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPopViewCollectionViewCell.h; sourceTree = "<group>"; };
-		E47251301E83EB0E007E61BE /* SKPopViewCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPopViewCollectionViewCell.m; sourceTree = "<group>"; };
-		E47251321E84DB3D007E61BE /* SKPopAnimationManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPopAnimationManger.h; sourceTree = "<group>"; };
-		E47251331E84DB3D007E61BE /* SKPopAnimationManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPopAnimationManger.m; sourceTree = "<group>"; };
-		E47251351E84FED0007E61BE /* SKMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKMacro.h; sourceTree = "<group>"; };
 		E47251361E863E58007E61BE /* SKDateSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKDateSource.h; sourceTree = "<group>"; };
 		E47251371E863E58007E61BE /* SKDateSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKDateSource.m; sourceTree = "<group>"; };
+		E472513B1E88AA97007E61BE /* SKMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKMacro.h; sourceTree = "<group>"; };
+		E472513C1E88AA97007E61BE /* SKPopAnimationManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPopAnimationManger.h; sourceTree = "<group>"; };
+		E472513D1E88AA97007E61BE /* SKPopAnimationManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPopAnimationManger.m; sourceTree = "<group>"; };
+		E472513E1E88AA97007E61BE /* SKPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPopView.h; sourceTree = "<group>"; };
+		E472513F1E88AA97007E61BE /* SKPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPopView.m; sourceTree = "<group>"; };
+		E47251401E88AA97007E61BE /* SKPopViewCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPopViewCollectionViewCell.h; sourceTree = "<group>"; };
+		E47251411E88AA97007E61BE /* SKPopViewCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPopViewCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,9 +110,9 @@
 		E47250EA1E83E254007E61BE /* SKChoosePopView */ = {
 			isa = PBXGroup;
 			children = (
+				E472513A1E88AA97007E61BE /* SKChoosePopView */,
 				E47251391E863E8A007E61BE /* DateSource */,
 				E47251061E83E7EA007E61BE /* Masonry */,
-				E47251021E83E2A4007E61BE /* SKPopView */,
 				E47250F11E83E255007E61BE /* ViewController.h */,
 				E47250F21E83E255007E61BE /* ViewController.m */,
 				E47250F41E83E256007E61BE /* Main.storyboard */,
@@ -132,20 +132,6 @@
 				E47250EC1E83E254007E61BE /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E47251021E83E2A4007E61BE /* SKPopView */ = {
-			isa = PBXGroup;
-			children = (
-				E47251031E83E2EC007E61BE /* SKPopView.h */,
-				E47251041E83E2EC007E61BE /* SKPopView.m */,
-				E472512F1E83EB0E007E61BE /* SKPopViewCollectionViewCell.h */,
-				E47251301E83EB0E007E61BE /* SKPopViewCollectionViewCell.m */,
-				E47251321E84DB3D007E61BE /* SKPopAnimationManger.h */,
-				E47251331E84DB3D007E61BE /* SKPopAnimationManger.m */,
-				E47251351E84FED0007E61BE /* SKMacro.h */,
-			);
-			path = SKPopView;
 			sourceTree = "<group>";
 		};
 		E47251061E83E7EA007E61BE /* Masonry */ = {
@@ -197,6 +183,20 @@
 				E47251371E863E58007E61BE /* SKDateSource.m */,
 			);
 			name = DateSource;
+			sourceTree = "<group>";
+		};
+		E472513A1E88AA97007E61BE /* SKChoosePopView */ = {
+			isa = PBXGroup;
+			children = (
+				E472513B1E88AA97007E61BE /* SKMacro.h */,
+				E472513C1E88AA97007E61BE /* SKPopAnimationManger.h */,
+				E472513D1E88AA97007E61BE /* SKPopAnimationManger.m */,
+				E472513E1E88AA97007E61BE /* SKPopView.h */,
+				E472513F1E88AA97007E61BE /* SKPopView.m */,
+				E47251401E88AA97007E61BE /* SKPopViewCollectionViewCell.h */,
+				E47251411E88AA97007E61BE /* SKPopViewCollectionViewCell.m */,
+			);
+			path = SKChoosePopView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,20 +273,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E47251261E83E7EA007E61BE /* MASConstraintMaker.m in Sources */,
+				E47251441E88AA97007E61BE /* SKPopViewCollectionViewCell.m in Sources */,
 				E47250F31E83E255007E61BE /* ViewController.m in Sources */,
 				E47251381E863E59007E61BE /* SKDateSource.m in Sources */,
 				E47250F01E83E255007E61BE /* AppDelegate.m in Sources */,
 				E47251251E83E7EA007E61BE /* MASConstraint.m in Sources */,
 				E472512D1E83E7EA007E61BE /* ViewController+MASAdditions.m in Sources */,
 				E47251271E83E7EA007E61BE /* MASLayoutConstraint.m in Sources */,
+				E47251431E88AA97007E61BE /* SKPopView.m in Sources */,
 				E472512A1E83E7EA007E61BE /* NSArray+MASAdditions.m in Sources */,
-				E47251311E83EB0E007E61BE /* SKPopViewCollectionViewCell.m in Sources */,
+				E47251421E88AA97007E61BE /* SKPopAnimationManger.m in Sources */,
 				E47251291E83E7EA007E61BE /* MASViewConstraint.m in Sources */,
 				E47251281E83E7EA007E61BE /* MASViewAttribute.m in Sources */,
 				E472512C1E83E7EA007E61BE /* View+MASAdditions.m in Sources */,
-				E47251051E83E2EC007E61BE /* SKPopView.m in Sources */,
 				E47250ED1E83E254007E61BE /* main.m in Sources */,
-				E47251341E84DB3D007E61BE /* SKPopAnimationManger.m in Sources */,
 				E472512E1E83E7EA007E61BE /* README.md in Sources */,
 				E47251241E83E7EA007E61BE /* MASCompositeConstraint.m in Sources */,
 				E472512B1E83E7EA007E61BE /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
