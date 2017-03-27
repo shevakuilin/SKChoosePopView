@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '25E8A9BC61A0B5B4AEFBC2F05DC67300'
+               BlueprintIdentifier = '3E5FC81EA8C95DACE30918E4BCCE874E'
                BlueprintName = 'Pods-SKChoosePopView'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-SKChoosePopView.a'>
