@@ -15,7 +15,6 @@ typedef NS_ENUM(NSInteger, SK_ANIMATION_TYPE) {// 动画类型
     SK_ANIMATION_TYPE_LARGEN,// 变大效果
     SK_ANIMATION_TYPE_ROTATION_LARGEN,// 旋转变大效果
     SK_ANIMATION_TYPE_TRANSFORMATION// 变形效果
-//    SK_ANIMATION_TYPE_CUSTOM// 自定义效果----> 只需要处理效果，进场路线无需处理
 };
 
 typedef NS_ENUM(NSInteger, SK_ANIMATION_SUBTYPE) {// 动画方向
