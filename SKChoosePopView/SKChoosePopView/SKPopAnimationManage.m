@@ -6,16 +6,16 @@
 //  Copyright © 2017年 shevchenko. All rights reserved.
 //
 
-#import "SKPopAnimationManger.h"
+#import "SKPopAnimationManage.h"
 #import "SKMacro.h"
 
-@interface SKPopAnimationManger () <CAAnimationDelegate>
+@interface SKPopAnimationManage () <CAAnimationDelegate>
 @property (nonatomic, strong) UIView * animationView;// 执行动画的view
 @property (nonatomic, assign) NSTimeInterval animationDuration;// 动画持续时间
 
 @end
 
-@implementation SKPopAnimationManger
+@implementation SKPopAnimationManage
 
 - (instancetype)init
 {

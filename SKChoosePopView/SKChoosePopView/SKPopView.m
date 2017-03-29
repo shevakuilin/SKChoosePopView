@@ -9,7 +9,7 @@
 #import "SKPopView.h"
 #import "SKMacro.h"
 #import "SKPopViewCollectionViewCell.h"
-#import "SKPopAnimationManger.h"
+#import "SKPopAnimationManage.h"
 
 @interface SKPopView () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView * optionsCollectionView;// 选项collectionView
@@ -21,7 +21,7 @@
 @property (nonatomic, assign) NSInteger selectedRow;// 已选择的选项row
 @property (nonatomic, weak) id <SKPopViewDelegate> delegate;
 @property (nonatomic, copy) SKPopViewChooseCompletion completion;
-@property (nonatomic, strong) SKPopAnimationManger * animationManger;
+@property (nonatomic, strong) SKPopAnimationManage * animationManage;
 
 @property (nonatomic, assign) NSUInteger itemHeight;// 选项高度
 @property (nonatomic, assign) NSUInteger itemWidth;// 选项宽度
@@ -190,45 +190,45 @@
 #pragma mark - 动画设置
 - (void)displayAnimation
 {
-    self.animationManger = [[SKPopAnimationManger alloc] init];
+    self.animationManage = [[SKPopAnimationManage alloc] init];
     switch (self.animationType) {
         case SK_TYPE_SPRING:
-            self.animationManger.type = SK_ANIMATION_TYPE_SPRING;
+            self.animationManage.type = SK_ANIMATION_TYPE_SPRING;
             break;
         case SK_TYPE_ROTATION:
-            self.animationManger.type = SK_ANIMATION_TYPE_ROTATION;
+            self.animationManage.type = SK_ANIMATION_TYPE_ROTATION;
             break;
         case SK_TYPE_FADE:
-            self.animationManger.type = SK_ANIMATION_TYPE_FADE;
+            self.animationManage.type = SK_ANIMATION_TYPE_FADE;
             break;
         case SK_TYPE_LARGEN:
-            self.animationManger.type = SK_ANIMATION_TYPE_LARGEN;
+            self.animationManage.type = SK_ANIMATION_TYPE_LARGEN;
             break;
         case SK_TYPE_ROTATION_LARGEN:
-            self.animationManger.type = SK_ANIMATION_TYPE_ROTATION_LARGEN;
+            self.animationManage.type = SK_ANIMATION_TYPE_ROTATION_LARGEN;
             break;
         case SK_TYPE_TRANSFORMATION:
-            self.animationManger.type = SK_ANIMATION_TYPE_TRANSFORMATION;
+            self.animationManage.type = SK_ANIMATION_TYPE_TRANSFORMATION;
             break;
     }
     
     switch (self.animationDirection) {
         case SK_SUBTYPE_FROMRIGHT:
-            self.animationManger.animationDirection = SK_ANIMATION_SUBTYPE_FROMRIGHT;
+            self.animationManage.animationDirection = SK_ANIMATION_SUBTYPE_FROMRIGHT;
             break;
         case SK_SUBTYPE_FROMLEFT:
-            self.animationManger.animationDirection = SK_ANIMATION_SUBTYPE_FROMLEFT;
+            self.animationManage.animationDirection = SK_ANIMATION_SUBTYPE_FROMLEFT;
             break;
         case SK_SUBTYPE_FROMTOP:
-            self.animationManger.animationDirection = SK_ANIMATION_SUBTYPE_FROMTOP;
+            self.animationManage.animationDirection = SK_ANIMATION_SUBTYPE_FROMTOP;
             break;
 
         case SK_SUBTYPE_FROMBOTTOM:
-            self.animationManger.animationDirection = SK_ANIMATION_SUBTYPE_FROMBOTTOM;
+            self.animationManage.animationDirection = SK_ANIMATION_SUBTYPE_FROMBOTTOM;
             break;
 
         case SK_SUBTYPE_FROMCENTER:
-            self.animationManger.animationDirection = SK_ANIMATION_SUBTYPE_FROMCENTER;
+            self.animationManage.animationDirection = SK_ANIMATION_SUBTYPE_FROMCENTER;
             break;
 
             
@@ -236,13 +236,13 @@
             break;
     }
     
-    [self.animationManger animateWithView:self.popView Duration:self.animationDuration animationType:self.animationManger.type animationDirection:self.animationManger.animationDirection];
+    [self.animationManage animateWithView:self.popView Duration:self.animationDuration animationType:self.animationManage.type animationDirection:self.animationManage.animationDirection];
 }
 
 - (void)dismissAnimation
 {
     if (self.enableAnimation == YES) {
-        [self.animationManger dismissAnimationForRootView:self];
+        [self.animationManage dismissAnimationForRootView:self];
     } else {
         [self removeFromSuperview];
     }

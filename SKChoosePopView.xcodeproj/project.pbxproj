@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		847E2C7AC5356A45B4FEA19E /* libPods-SKChoosePopView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E5D8A9C269CCAD24A3BDF0 /* libPods-SKChoosePopView.a */; };
+		E46BB9381E8B737A00A1E1C7 /* SKPopAnimationManage.m in Sources */ = {isa = PBXBuildFile; fileRef = E46BB9371E8B737A00A1E1C7 /* SKPopAnimationManage.m */; };
 		E47250ED1E83E254007E61BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E47250EC1E83E254007E61BE /* main.m */; };
 		E47250F01E83E255007E61BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E47250EF1E83E255007E61BE /* AppDelegate.m */; };
 		E47250F31E83E255007E61BE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E47250F21E83E255007E61BE /* ViewController.m */; };
@@ -15,7 +16,6 @@
 		E47250F81E83E256007E61BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E47250F71E83E256007E61BE /* Assets.xcassets */; };
 		E47250FB1E83E256007E61BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E47250F91E83E256007E61BE /* LaunchScreen.storyboard */; };
 		E47251381E863E59007E61BE /* SKDateSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E47251371E863E58007E61BE /* SKDateSource.m */; };
-		E47251421E88AA97007E61BE /* SKPopAnimationManger.m in Sources */ = {isa = PBXBuildFile; fileRef = E472513D1E88AA97007E61BE /* SKPopAnimationManger.m */; };
 		E47251431E88AA97007E61BE /* SKPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = E472513F1E88AA97007E61BE /* SKPopView.m */; };
 		E47251441E88AA97007E61BE /* SKPopViewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E47251411E88AA97007E61BE /* SKPopViewCollectionViewCell.m */; };
 /* End PBXBuildFile section */
@@ -24,6 +24,8 @@
 		1A84B7ABC7C83CF8A72E79A0 /* Pods-SKChoosePopView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKChoosePopView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SKChoosePopView/Pods-SKChoosePopView.debug.xcconfig"; sourceTree = "<group>"; };
 		9655957838A0FF254E4AF186 /* Pods-SKChoosePopView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKChoosePopView.release.xcconfig"; path = "Pods/Target Support Files/Pods-SKChoosePopView/Pods-SKChoosePopView.release.xcconfig"; sourceTree = "<group>"; };
 		D6E5D8A9C269CCAD24A3BDF0 /* libPods-SKChoosePopView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SKChoosePopView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E46BB9361E8B737A00A1E1C7 /* SKPopAnimationManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPopAnimationManage.h; sourceTree = "<group>"; };
+		E46BB9371E8B737A00A1E1C7 /* SKPopAnimationManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPopAnimationManage.m; sourceTree = "<group>"; };
 		E47250E81E83E254007E61BE /* SKChoosePopView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKChoosePopView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E47250EC1E83E254007E61BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E47250EE1E83E254007E61BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -37,8 +39,6 @@
 		E47251361E863E58007E61BE /* SKDateSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKDateSource.h; sourceTree = "<group>"; };
 		E47251371E863E58007E61BE /* SKDateSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKDateSource.m; sourceTree = "<group>"; };
 		E472513B1E88AA97007E61BE /* SKMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKMacro.h; sourceTree = "<group>"; };
-		E472513C1E88AA97007E61BE /* SKPopAnimationManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPopAnimationManger.h; sourceTree = "<group>"; };
-		E472513D1E88AA97007E61BE /* SKPopAnimationManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPopAnimationManger.m; sourceTree = "<group>"; };
 		E472513E1E88AA97007E61BE /* SKPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPopView.h; sourceTree = "<group>"; };
 		E472513F1E88AA97007E61BE /* SKPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPopView.m; sourceTree = "<group>"; };
 		E47251401E88AA97007E61BE /* SKPopViewCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPopViewCollectionViewCell.h; sourceTree = "<group>"; };
@@ -131,12 +131,12 @@
 			isa = PBXGroup;
 			children = (
 				E472513B1E88AA97007E61BE /* SKMacro.h */,
-				E472513C1E88AA97007E61BE /* SKPopAnimationManger.h */,
-				E472513D1E88AA97007E61BE /* SKPopAnimationManger.m */,
 				E472513E1E88AA97007E61BE /* SKPopView.h */,
 				E472513F1E88AA97007E61BE /* SKPopView.m */,
 				E47251401E88AA97007E61BE /* SKPopViewCollectionViewCell.h */,
 				E47251411E88AA97007E61BE /* SKPopViewCollectionViewCell.m */,
+				E46BB9361E8B737A00A1E1C7 /* SKPopAnimationManage.h */,
+				E46BB9371E8B737A00A1E1C7 /* SKPopAnimationManage.m */,
 			);
 			path = SKChoosePopView;
 			sourceTree = "<group>";
@@ -265,11 +265,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E47251441E88AA97007E61BE /* SKPopViewCollectionViewCell.m in Sources */,
+				E46BB9381E8B737A00A1E1C7 /* SKPopAnimationManage.m in Sources */,
 				E47250F31E83E255007E61BE /* ViewController.m in Sources */,
 				E47251381E863E59007E61BE /* SKDateSource.m in Sources */,
 				E47250F01E83E255007E61BE /* AppDelegate.m in Sources */,
 				E47251431E88AA97007E61BE /* SKPopView.m in Sources */,
-				E47251421E88AA97007E61BE /* SKPopAnimationManger.m in Sources */,
 				E47250ED1E83E254007E61BE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -26,7 +26,7 @@ typedef NS_ENUM(NSInteger, SK_ANIMATION_SUBTYPE) {// 动画方向
     SK_ANIMATION_SUBTYPE_FROMCENTER// 从屏幕中间进入
 };
 
-@interface SKPopAnimationManger : NSObject
+@interface SKPopAnimationManage : NSObject
 
 /** 进场动画设置 --->不需要完成后继续进行操作
  * @param duration 持续时间
