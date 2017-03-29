@@ -68,6 +68,5 @@ typedef void (^SKPopViewChooseCompletion)(void);
 @property (nonatomic, assign) SK_TYPE animationType;// 动画类型
 @property (nonatomic, assign) SK_SUBTYPE animationDirection;// 动画出现的方向
 @property (nonatomic, assign) NSTimeInterval animationDuration;// 动画持续时间
-// TODO:弹窗弹出的速率Speed
 
 @end
