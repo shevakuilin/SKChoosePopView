@@ -2,11 +2,14 @@
 
 SKChoosePopView是一个HUD风格的可定制化选项弹窗的快速解决方案，集成了上、下、左、右、中5个进场方向的6种动画效果，如果不能满足你对酷炫效果的需要，SKChoosePopView同样支持自定义动画，以及选择记录、动画的开闭、点击特效、行列数量控制等。如果你觉得还不错，star支持一下吧！
 
-![Language](https://img.shields.io/badge/Language-%20Objective%20C%20-blue.svg) 
+![](https://img.shields.io/badge/platform-iOS-green.svg)
+![](https://img.shields.io/badge/pod-v1.6.0.beta.1-blue.svg)
+![](https://img.shields.io/badge/language-ObjectiveC-purple.svg)
+![](https://img.shields.io/badge/moduleVersion-v0.0.5-red.svg)
 
 
 ### 效果图 
-<img src="http://ofg0p74ar.bkt.clouddn.com/SKPopViewExample.gif" width="370" height ="665" />
+<img src="https://upload-images.jianshu.io/upload_images/2660903-e378466995e85688.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/372/format/webp" width="370" height ="665" />
 
 
 # 如何开始 
